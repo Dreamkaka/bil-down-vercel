@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "哔哩哔哩-vrc",
+    "title": "bil-download",
     "description": "",
     "version": "1.0.0"
   },
@@ -109,7 +109,7 @@
       "get": {
         "summary": "获取后跳转",
         "x-apifox-folder": "",
-        "x-apifox-status": "developing",
+        "x-apifox-status": "released",
         "deprecated": false,
         "description": "输入链接跳转，相比输入url能控制分p和画质（貌似url也能控制）",
         "tags": [],
@@ -187,7 +187,7 @@
   },
   "servers": [
     {
-      "url": "https://blidown.xiaohan-kaka.gay/api/index.php",
+      "url": "https://blidown.xiaohan-kaka.gay",
       "description": "正式环境"
     }
   ]
