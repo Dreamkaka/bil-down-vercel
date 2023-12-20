@@ -1,1 +1,70 @@
-构建成功<a href="/api/index.php">点击这里查看phpinfo</a>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哔哩哔哩解析 API 主页</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Helvetica', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://f003.backblazeb2.com/file/pic-pan/VRChat_2023-12-20_02-10-31.293_2560x1440.png') center/cover no-repeat; /* Replace 'your-background-image.jpg' with your image URL */
+            backdrop-filter: blur(5px); /* Add a 5px blur effect to the background */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff; /* Set text color to white for better visibility on the blurred background */
+        }
+
+        main {
+            text-align: center;
+        }
+
+        h3, p, a {
+            color: #fff; /* Set text color to white */
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #007BFF;
+            text-decoration: none;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-right: 10px; /* Adjust the margin to create space between buttons */
+        }
+
+        a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>哔哩哔哩解析 API</h1>
+        <p>用于解析哔哩哔哩直链</p>
+    </header>
+
+    <main>
+        <h3>注意：项目部署在香港，所以最终解析出的原链接将是哔哩哔哩在香港地区的 CDN</h3>
+        <p><a href="documentation.html">查看文档</a><a href="https://status-api.xiaohan-kaka.gay/">API监控</a></p>
+    </main>
+
+    <footer>
+        <h3>thanks:</h3>
+        <p><a href="https://github.com/mmyo456/blidownload">blidownload-mmyo456</a></p>
+        <p><a href="https://github.com/fanmingming/myphp">fanmingming/myphp</a></p>
+    </footer>
+</body>
+</html>
