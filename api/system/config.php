@@ -1,0 +1,5 @@
+<?php
+        $data = array(
+          'cookie' => 'SESSDATA=71abfb8b%2C1718458632%2C63365%2Ac1CjCifEJPoIQOMCrOhY-bEvh7ZWr2Bwx5e_bkBxK47TRU6Ttoqy_r6EwHXGgHdKOMaFUSVk1XSjZKejVHZVBrdXBGOXloYTZMVVRLTktFX3JvUkFvQzJOZmR2QTU5Ny1ONDBqMnExSVVrMnk2TU51dmxtc21taGRUM240TnBCZjkxQm1RUmw3cl9nIIEC'
+        );
+        ?>
