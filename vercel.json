@@ -7,9 +7,8 @@
       "runtime": "vercel-php@0.6.0"
     }
   },
-  {
   "redirects": [
     { "source": "/docs/index.html", "destination": "/docs", "permanent": false }
   ]
-}
+
 }
