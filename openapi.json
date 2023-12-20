@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.1.0",
   "info": {
     "title": "bil-download",
     "description": "",
@@ -13,45 +13,15 @@
         "x-apifox-folder": "",
         "x-apifox-status": "released",
         "deprecated": false,
-        "description": "",
+        "description": "直接跳链接，懒人解析法",
         "tags": [],
         "parameters": [
           {
-            "name": "type",
+            "name": "url",
             "in": "query",
-            "description": "",
+            "description": "b站视频链接",
             "required": true,
-            "example": "get",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "id",
-            "in": "query",
-            "description": "",
-            "required": true,
-            "example": "BV1Wh4y1C712",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "p",
-            "in": "query",
-            "description": "",
-            "required": true,
-            "example": "5",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "qn",
-            "in": "query",
-            "description": "",
-            "required": true,
-            "example": "80",
+            "example": "https://www.bilibili.com/video/BV1d24y1e74N",
             "schema": {
               "type": "string"
             }
@@ -61,7 +31,7 @@
           "200": {
             "description": "成功",
             "content": {
-              "application/json": {
+              "*/*": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -90,11 +60,7 @@
                 "examples": {
                   "1": {
                     "summary": "成功示例",
-                    "value": {
-                      "code": 200,
-                      "msg": "视频地址获取成功",
-                      "data": "https://upos-hz-mirrorakam.akamaized.net/upgcxcode/73/75/1218467573/1218467573_u1-1-192.mp4?e=ig8euxZM2rNcNbRa7bdVhwdlhWujhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1703075517&gen=playurlv2&os=akam&oi=585935869&trid=015daec2ec4745b5bd4f99c36289ccd4T&mid=516951032&platform=html5&upsig=80a4f2530cd06d247d324210528c5569&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&hdnts=exp=1703082439~hmac=da910038c2ccc4f8a220d06965a849a47c360f8d3547503b9660c8170c440773&bvc=vod&nettype=0&bw=176881&orderid=0,1&buvid=&build=0&mobi_app=&f=T_0_0&logo=80000000"
-                    }
+                    "value": "https://upos-sz-mirrorali.bilivideo.com/upgcxcode/73/68/958356873/958356873-1-208.mp4?e=ig8euxZM2rNcNbhMnwdVhwdlhzK3hwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1703092640&gen=playurlv2&os=alibv&oi=2018263300&trid=544a561f04124cd4920dd6b9b710aee0T&mid=3546578751064423&platform=html5&upsig=6162f90b81c9cc380615bc5d6b97cb35&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&bw=348614&orderid=0,1&buvid=&build=0&mobi_app=&f=T_0_0&logo=80000000"
                   }
                 }
               }
@@ -111,7 +77,7 @@
         "x-apifox-folder": "",
         "x-apifox-status": "released",
         "deprecated": false,
-        "description": "输入链接跳转，相比输入url能控制分p和画质（貌似url也能控制）",
+        "description": "输入bv号获取json，或者跳转，此方法相较直接输入url可以更方便的控制分p和画质",
         "tags": [],
         "parameters": [
           {
@@ -156,7 +122,7 @@
           }
         ],
         "responses": {
-          "404": {
+          "200": {
             "description": "成功",
             "content": {
               "*/*": {
@@ -170,6 +136,48 @@
                   "1": {
                     "summary": "成功示例",
                     "value": "直接定向到视频原地址"
+                  }
+                }
+              }
+            }
+          },
+          "x-200:get-成功": {
+            "description": "get-成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-orders": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "视频地址获取成功",
+                      "data": "https://upos-hz-mirrorakam.akamaized.net/upgcxcode/73/75/1218467573/1218467573_u1-1-192.mp4?e=ig8euxZM2rNcNbRa7bdVhwdlhWujhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1703075517&gen=playurlv2&os=akam&oi=585935869&trid=015daec2ec4745b5bd4f99c36289ccd4T&mid=516951032&platform=html5&upsig=80a4f2530cd06d247d324210528c5569&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&hdnts=exp=1703082439~hmac=da910038c2ccc4f8a220d06965a849a47c360f8d3547503b9660c8170c440773&bvc=vod&nettype=0&bw=176881&orderid=0,1&buvid=&build=0&mobi_app=&f=T_0_0&logo=80000000"
+                    }
                   }
                 }
               }
