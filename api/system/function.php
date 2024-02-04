@@ -10,10 +10,10 @@ function GetVideoSrchtml5($videoid, $p = 1, $qn = 80)
     include(DIR . '/system/config.php');
     $cid = GetCid($videoid, $p);
     $header = "cookie:" . $data['cookie'] . "\r\n";
-    $Response = MyRequest("https://api.bilibili.com/x/player/wbi/playurl?bvid=$videoid&cid=$cid&qn=$qn&type=&otype=json&platform=html5&high_quality=1", $header, "", "", "");
+    $Response = MyRequest("https://api.bilibili.com/x/player/playurl?bvid=$videoid&cid=$cid&qn=$qn&type=&otype=json&platform=html5&high_quality=1", $header, "", "", "");
     // 组合完成链接示例 https://api.bilibili.com/x/player/playurl?bvid=BV1TG411c7Hf&cid=894980768&qn=1&type=&otype=json&platform=html5&high_quality=1
     $Response = json_decode($Response['body'], true);
-    return stripslashes($Response['data'][0]['url']);
+    return stripslashes($Response['data']['durl'][0]['url']);
 }
 
 /* 
